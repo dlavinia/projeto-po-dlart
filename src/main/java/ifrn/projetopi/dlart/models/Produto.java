@@ -1,11 +1,20 @@
 package ifrn.projetopi.dlart.models;
 
-public class Produtos {
+public class Produto {
 
 	private int id;
 	private String nome;
 	private String descricao;
 	private String imagem;
+	private int preco;
+
+	public int getPreco() {
+		return preco;
+	}
+
+	public void setPreco(int preco) {
+		this.preco = preco;
+	}
 
 	public int getId() {
 		return id;
