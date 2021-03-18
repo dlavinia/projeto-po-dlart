@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+.home {
+	height: 100vh;
+	padding: 2%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.home img {
+	height: 100%;
+}
+
+.home .text {
+	margin-top: 100px;
+	color: #000000;
+}
+
+.home .text h1 {
+	font-family: 'Noto Sans JP', sans-serif;
+	font-size: 7em;
+}
+
+.home .text h2 {
+	font-family: 'Codystar', cursive;
+	font-size: 3em;
+	font-weight: bold;
+	color: #fc444c;
+}

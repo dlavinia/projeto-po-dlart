@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+.form-container {
+	margin: 5%;
+	padding: 10%;
+	padding-top: 5%;
+	border-radius: 15px;
+	box-shadow: 0px 0px 9px black;
+}
+
+.form-container .field {
+	margin: 7px;
+}
+
+.form-control:focus {
+	border-color: #fc444c;
+	box-shadow: 0 0 0 0.25rem rgb(252 68 76/ 25%);
+}
+
+.btn-form {
+	
+}
+
+.btn-form:hover {
+	color: #fc444c;
+}

@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Codystar&family=Noto+Sans+JP:wght@100&display=swap')
+	;
+
+body {
+	background-color: #e8edf1;
+}
+
+nav {
+	padding-left: 25px;
+	padding-right: 15px;
+}
+
+.nav-btn {
+	display: inline;
+	color: black;
+	border: 0px;
+	font-size: 1.2em;
+}
+
+.nav-btn:hover {
+	color: #fc444c;
+}
+
+.btn-group {
+	display: flex;
+	margin: 18px;
+}
+
+.title {
+	position: relative;
+}
+
+.title .title-bg {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 40%;
+	width: 100%;
+	background-color: #fc444c;
+	z-index: -2;
+}
+
+.title h1 {
+	font-family: 'Noto Sans JP', sans-serif;
+	padding-left: 3%;
+	font-weight: bold;
+	text-align: center;
+}
