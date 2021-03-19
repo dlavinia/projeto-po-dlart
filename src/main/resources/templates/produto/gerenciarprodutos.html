@@ -6,10 +6,15 @@
 	rel="stylesheet"
 	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
 	crossorigin="anonymous">
-	
 
-	
-	<meta charset="UTF-8"/>
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+
+<meta charset="UTF-8" />
 <style>
 @import
 	url('https://fonts.googleapis.com/css2?family=Codystar&family=Noto+Sans+JP:wght@100&display=swap')
@@ -35,6 +40,13 @@ nav {
 	color: #fc444c;
 }
 
+.form-container{
+	margin: 5%;
+	padding: 5%;
+	border-radius: 15px;
+	box-shadow: 0px 0px 2px black;
+}
+
 .btn-group {
 	display: flex;
 	margin: 18px;
@@ -42,6 +54,8 @@ nav {
 
 .title {
 	position: relative;
+	margin-top:45px;
+	margin-bottom:25px;
 }
 
 .title .title-bg {
@@ -60,17 +74,6 @@ nav {
 	padding-left: 3%;
 	font-weight: bold;
 	text-align: center;
-}
-.form-container {
-	margin: 5%;
-	padding: 10%;
-	padding-top: 5%;
-	border-radius: 15px;
-	box-shadow: 0px 0px 9px black;
-}
-
-.form-container .field {
-	margin: 7px;
 }
 
 .form-control:focus {
@@ -93,22 +96,54 @@ nav {
 </head>
 <body>
 
-	
-	<nav class="navbar navbar-light justify-content-between"
-			style="background-color: #e8edf1">
-			<a class="navbar-brand">DLART</a>
 
-			<div>
-				<a href="#" class="btn nav-btn"> Sing in</a>
-				
-				 <a href="#" class="btn nav-btn"> Sing up</a> 
-				 
-				<a href="/novoproduto" class="btn nav-btn">
-					Novo Produto</a>
-			</div>
-		</nav>
-	
+	<nav class="navbar navbar-light justify-content-between"
+		style="background-color: #e8edf1">
+		<a class="navbar-brand">DLART</a>
+
+		<div>
+			<a href="#" class="btn nav-btn"> Entrar</a> <a href="#"
+				class="btn nav-btn"> Cadastrar-se</a> <a href="gerenciarprodutos"
+				class="btn nav-btn"> Gerenciar Produtos</a>
+		</div>
+	</nav>
+
 	<div class="container">
+
+
+		<div class="title">
+
+			<h1>Gerenciar produtos</h1>
+			<div class="title-bg"></div>
+		</div>
+
+
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th scope="col">Id</th>
+					<th scope="col">Titulo</th>
+					<th scope="col">Descrição</th>
+					<th scope="col">Preço</th>
+					<th scope="col">Editar</th>
+					<th scope="col">Exluir</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="p : ${produtos}">
+					<th scope="row" th:text=${p.id}>id</th>
+					<td th:text=${p.nome}>nome</td>
+					<td th:text=${p.descricao} >descrição</td>
+					<td th:text=${p.preco} >preço</td>
+					<td><i class="fa fa-edit" style="font-size: 25px;"></i></td>
+					<td><i class="fa fa-minus-circle" style="font-size: 25px"></i></td>
+				</tr>
+
+			</tbody>
+
+		</table>
+
 		<div class="form-container">
 			<div class="title">
 
@@ -119,23 +154,29 @@ nav {
 
 			<form action="/addproduto" method="post">
 				<div class="form-group">
-					<div class="field">
+				
+				<div class="row">
+					<div class="field col-6">
 						<label>Título:</label> <input type="text" name="nome"
-							class="form-control"/>
+							class="form-control" />
 					</div>
-					<div class="field">
+					<div class="field col-6">
 						<label>Descrição:</label> <input type="text" name="descricao"
 							class="form-control" />
 					</div>
-					<div class="field">
+				</div>
+				
+				<div class="row">
+					<div class="field col-6">
 						<label>Preço:</label> <input type="number" name="preco"
 							class="form-control" />
 					</div>
 
-					<div class="field">
+					<div class="field col-6">
 						<label>Foto:</label> <input type="file" name="imagem"
 							class="form-control" />
 					</div>
+				</div>
 				</div>
 
 				<div class="btn-group">

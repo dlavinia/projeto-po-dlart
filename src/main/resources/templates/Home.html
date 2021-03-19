@@ -41,6 +41,7 @@ nav {
 
 .title {
 	position: relative;
+	margin-bottom: 45px;
 }
 
 .title .title-bg {
@@ -48,7 +49,7 @@ nav {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	height: 40%;
+	height: 30%;
 	width: 100%;
 	background-color: #fc444c;
 	z-index: -2;
@@ -92,13 +93,15 @@ nav {
 .cards {
 	display: flex;
 	justify-content: space-around;
+	flex-wrap: wrap;
+	
 }
 
 .card-produto {
 	height: 400px;
 	margin: 8px;
 	position: relative;
-	background-color: black;
+	margin-bottom: 50px;
 }
 
 .text-produto {
@@ -186,9 +189,9 @@ nav {
 		<a class="navbar-brand">DLART</a>
 
 		<div>
-			<a href="#" class="btn nav-btn"> Sing in</a> <a href="#"
-				class="btn nav-btn"> Sing up</a> <a href="/novoproduto"
-				class="btn nav-btn"> Novo Produto</a>
+			<a href="#" class="btn nav-btn"> Entrar</a> <a href="#"
+				class="btn nav-btn"> Cadastrar-se</a> <a href="gerenciarprodutos"
+				class="btn nav-btn"> Gerenciar Produtos</a>
 		</div>
 	</nav>
 
@@ -223,12 +226,12 @@ nav {
 
 
 					<div class="img-produto">
-						<img src="https://i.stack.imgur.com/KsBaX.jpg">
+						<img src="https://lh3.googleusercontent.com/42N2UrICWCLoM2li8cfqDwLpmw3Y8Rl7T5mlnLdSKJpdpSc1kX2epYANDX4vE82jFt4rJfB0oUcNDpx5CCVCrzgAMyo8Duro1CvEV_hQk60FyZ4CXVjETuX4OHJXtFhNUxYEdS9YBM2TVWy1xZ8espCjXSFmyGX4f309ofQpLrzEBaPOvZilyANKAHrakH4JOqxbyg5DAkCypyPAkh-3Hz11jTd0Q1gcRC_jVkktERVUF0BhLV07_nwpKUOTw0rJuEUdzC-YXuTgPMfYsOnumT6S9Zm3hXycCyHzpNAZ1qPvcAyt_EX0m4qYFV7pcaIB3rkYxZmgocstCWCCNi6VKzOPk_5RsEoJRnmP1B00C8kzpunCtDSwjqcbghLJzvcPbfnExlJmg5a06kOCjf-zKI8v9Zsv9uxaCajS4u93Ch3DJx-1TY0L6h5aIlrhdhZly5NfaWPYeZu85SYiF1torTQXv8CMETb-KkHGLmCpcFkDWX27mcoioAvJmb6dIioYAvkpIXcuV3ZroRk5ikL5XfvOb4RGHGD9OvEx7X1Vo_TV86TjmHRuPhydnHZVHrGJlyTkmhMQ5LRZQWgk_yqHdvti12pJjMnQBwjOrgbQzPw9xNmEdZ5YsXszRRn1E8tDqOfC0rirKbbqijRWxnoFiPs7LU3D5WTISbP2kjRItpKdkmA62m-BokiMY14HEXtgrsHIr8njklGYscyzj-kgn4Lv=w626-h625-no?authuser=0">
 					</div>
 
 					<div class="text-produto">
 
-						<a class="btn btn-detalhes"> Saiba mais </a>
+						<a th:href="@{/produto/{id}(id = ${p.id})}" class="btn btn-detalhes"> Saiba mais </a>
 
 						<h2 th:text=${p.preco}>Preço</h2>
 						<h2 th:text=${p.descricao}>tipo</h2>

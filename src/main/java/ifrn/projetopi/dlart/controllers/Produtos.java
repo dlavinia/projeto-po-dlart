@@ -25,11 +25,22 @@ public class Produtos {
 		return "home";
 	};
 	
-	@GetMapping("/novoproduto")
-	public String novoProd() {
-		return "produto/novoProduto";
-	}
 	
+	
+	//Listar para gerenciar
+		@GetMapping("/gerenciarprodutos")
+		public ModelAndView getprodutos() {
+			
+			List<Produto> produtos = pr.findAll();
+			ModelAndView mv = new ModelAndView("produto/gerenciarprodutos");
+			mv.addObject("produtos", produtos);
+			return mv;
+			
+		}
+		
+	
+	
+	//Listar produtos na home
 	@GetMapping("/")
 	public ModelAndView listarProdutos() {
 		
@@ -40,6 +51,7 @@ public class Produtos {
 		
 	}
 	
+	//Detalhar produtos
 	@GetMapping("/produto/{id}")
 	public ModelAndView detalhar(@PathVariable Long id) {
 		ModelAndView md = new ModelAndView();
@@ -55,17 +67,16 @@ public class Produtos {
 		md.addObject("produto", produto);
 		
 		return md;
-		
-		
-		
+			
 	}
-	
-	
-	
+	//Salvar produtos
 	@PostMapping("/addproduto")
 	public String saveProduto(Produto produto){
 		pr.save(produto);
 		System.out.print("Salvou o produto");
-		return "produto/produtoadd";
+		return "produto/gerenciarprodutos";
 	}
+	
+
+	
 }

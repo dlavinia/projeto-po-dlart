@@ -6,10 +6,10 @@
 	rel="stylesheet"
 	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
 	crossorigin="anonymous">
-	
 
-	
-	<meta charset="UTF-8"/>
+
+
+<meta charset="UTF-8" />
 <style>
 @import
 	url('https://fonts.googleapis.com/css2?family=Codystar&family=Noto+Sans+JP:wght@100&display=swap')
@@ -61,6 +61,7 @@ nav {
 	font-weight: bold;
 	text-align: center;
 }
+
 .form-container {
 	margin: 5%;
 	padding: 10%;
@@ -85,6 +86,98 @@ nav {
 .btn-form:hover {
 	color: #fc444c;
 }
+
+	.cards{
+			display: flex;
+			justify-content: space-around;
+			flex-wrap: wrap;
+
+
+		}
+		.card-produto{
+			height: 400px;
+			margin: 8px;
+			position: relative;
+			margin-bottom: 50px;
+
+		}
+		.text-produto{
+			padding: 20px;
+			position: absolute;
+  			bottom: 0;
+ 		 	left: 0;
+ 			right: 0;
+  			height: 100%;
+  			width: 100%;
+  			opacity: 0;
+  			transition: opacity 0.6s ;
+  			background-color:  black;
+  			display: flex;
+			flex-direction: column-reverse;
+			color: white;
+			border-radius: 5%;
+		}
+		.text-produto:hover{
+			opacity: .7
+		}	
+
+		.img-produto{
+			width: 100%;
+			height: 100%;
+			z-index: 0;
+
+		}
+
+		.img-produto img{
+			width: 100%;
+    		height: 100%;
+    		object-fit: cover;
+    		box-shadow: 3px 4px 9px black;
+			border-radius: 5%;
+
+		}
+		.fav{
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			border: 0px;
+			background-color: transparent;
+		}
+
+		.fav img{
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			width: 45px;
+			height: 45px;
+			padding: 10px;
+
+		}
+		
+		.btn-detalhes{
+			background-color: transparent;
+			border-top:2px solid transparent;
+			border-bottom:2px solid transparent; 
+			border-right: 2px solid #fc444c;
+			border-left: 2px solid #fc444c;
+			color: white;
+			font-size: 1.2em;
+			transition: border-top .6s;
+			transition: border-bottom .6s;
+			padding: 5px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-decoration: none;
+
+		}
+		.btn-detalhes:hover{
+			border-top:2px solid #fc444c;
+			border-bottom:2px solid #fc444c;
+			color: white;
+		}
 </style>
 
 <title>Saber mais</title>
@@ -93,29 +186,48 @@ nav {
 </head>
 <body>
 
-	
-	<nav class="navbar navbar-light justify-content-between"
-			style="background-color: #e8edf1">
-			<a class="navbar-brand">DLART</a>
 
-			<div>
-				<a href="#" class="btn nav-btn"> Sing in</a>
-				
-				 <a href="#" class="btn nav-btn"> Sing up</a> 
-				 
-				<a href="/novoproduto" class="btn nav-btn">
-					Novo Produto</a>
-			</div>
-		</nav>
-	
+	<nav class="navbar navbar-light justify-content-between"
+		style="background-color: #e8edf1">
+		<a class="navbar-brand">DLART</a>
+
+		<div>
+			<a href="#" class="btn nav-btn"> Entrar</a> <a href="#"
+				class="btn nav-btn"> Cadastrar-se</a> <a href="/gerenciarprodutos"
+				class="btn nav-btn"> Gerenciar Produtos</a>
+		</div>
+	</nav>
+
 	<div class="container">
-	
-		<h1>Produto</h1>
+
+		<div class="row">
+		<div class="card-produto col-4" style="min-height:500px">	
+			<div class="img-produto ">
+				<img src="https://lh3.googleusercontent.com/42N2UrICWCLoM2li8cfqDwLpmw3Y8Rl7T5mlnLdSKJpdpSc1kX2epYANDX4vE82jFt4rJfB0oUcNDpx5CCVCrzgAMyo8Duro1CvEV_hQk60FyZ4CXVjETuX4OHJXtFhNUxYEdS9YBM2TVWy1xZ8espCjXSFmyGX4f309ofQpLrzEBaPOvZilyANKAHrakH4JOqxbyg5DAkCypyPAkh-3Hz11jTd0Q1gcRC_jVkktERVUF0BhLV07_nwpKUOTw0rJuEUdzC-YXuTgPMfYsOnumT6S9Zm3hXycCyHzpNAZ1qPvcAyt_EX0m4qYFV7pcaIB3rkYxZmgocstCWCCNi6VKzOPk_5RsEoJRnmP1B00C8kzpunCtDSwjqcbghLJzvcPbfnExlJmg5a06kOCjf-zKI8v9Zsv9uxaCajS4u93Ch3DJx-1TY0L6h5aIlrhdhZly5NfaWPYeZu85SYiF1torTQXv8CMETb-KkHGLmCpcFkDWX27mcoioAvJmb6dIioYAvkpIXcuV3ZroRk5ikL5XfvOb4RGHGD9OvEx7X1Vo_TV86TjmHRuPhydnHZVHrGJlyTkmhMQ5LRZQWgk_yqHdvti12pJjMnQBwjOrgbQzPw9xNmEdZ5YsXszRRn1E8tDqOfC0rirKbbqijRWxnoFiPs7LU3D5WTISbP2kjRItpKdkmA62m-BokiMY14HEXtgrsHIr8njklGYscyzj-kgn4Lv=w626-h625-no?authuser=0">
+
+			</div>
+			
+		</div>
+
+		<div class="col-7">
+			<div class="title">
+				<h1 th:text=${produto.nome}> nome</h1>
+				<div class="title-bg">
+				</div>
+			</div>
+
+				<h2 th:text=${produto.descricao}>Colar</h2>
+				<h2>R$ <span th:text==${produto.preco}> </span>,00</h2>
+
+			<div class="row" style="margin-top: 30px;">
+			<button class="btn btn-detalhes col-6" style="color: black">Encomendar</button>
+			<button class="btn btn-detalhes col-6" style="color: black">Salvar como favorito</button>
+			</div>
+		</div>
+
+	</div>
 		
-		<h2 th:text=${produto.nome}> kkkk </h2>
-		<h3  th:text=${produto.descricao}> Colar</h3>
-		<h3> R$ <span th:text==${produto.preco}> </span>,00</h3>
-		
+
 	</div>
 </body>
 </html>
