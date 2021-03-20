@@ -1,9 +1,12 @@
 package ifrn.projetopi.dlart.models;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Cliente {
@@ -14,6 +17,10 @@ public class Cliente {
 	private String nome;
 	private String email;
 	private String senha;
+	
+	@ManyToMany
+    private Set<Produto> produtosfavs;
+	
 	public Long getId() {
 		return id;
 	}

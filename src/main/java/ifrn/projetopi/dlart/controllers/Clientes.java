@@ -24,7 +24,7 @@ public class Clientes {
 		return "cliente/login";
 	};
 	
-	//Salvar produtos
+	//Salvar Clientes
 		@PostMapping("/cadastrar/cliente")
 		public String salvarCliente(Cliente cliente){
 			cr.save(cliente);
