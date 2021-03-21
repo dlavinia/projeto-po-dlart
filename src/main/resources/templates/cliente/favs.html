@@ -3,6 +3,11 @@
 <head>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 	<meta charset="UTF-8" />
+	
+	
+	<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
 	<style>
 	@import url('https://fonts.googleapis.com/css2?family=Codystar&family=Noto+Sans+JP:wght@100&display=swap');
 		body{
@@ -116,13 +121,15 @@
 			background-color: transparent;
 		}
 
-		.fav img{
+		.fav i{
 			position: absolute;
 			top: 0px;
 			right: 0px;
 			width: 45px;
 			height: 45px;
 			padding: 10px;
+			color:#fc444c;
+			font-size:25px;
 
 		}
 		
@@ -160,7 +167,7 @@
   
  	<div> 
  	<a href="/" class="btn nav-btn"> Home</a>
-   	<a href="#" class="btn nav-btn"> Novo Produto</a>
+   	<a href="/gerenciarprodutos" class="btn nav-btn"> Gerenciar Produtos</a>
    	
   	</div>
 </nav>
@@ -200,7 +207,7 @@
 				
 			</div>
 				<button class="fav">
-					<img src="imagens/heart-before.svg" id="favimg" onmousemove ="heartafter()" onmouseout="heartbefore()" onclick="favoritar()">
+					<i class="fa fa-heart" id="favimg"></i>
 				</button>
 			
 		</div>
@@ -210,8 +217,6 @@
 
 
 	</div>
-
-	<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 
 </body>
 </html>

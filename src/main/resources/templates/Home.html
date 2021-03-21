@@ -8,6 +8,11 @@
 	rel="stylesheet"
 	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
 	crossorigin="anonymous">
+	
+	
+	<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
 
 <style>
 @import
@@ -149,13 +154,15 @@ nav {
 	background-color: transparent;
 }
 
-.fav img {
+.fav i {
 	position: absolute;
 	top: 0px;
 	right: 0px;
 	width: 45px;
 	height: 45px;
 	padding: 10px;
+	color: #fc444c;
+	font-size: 25px;
 }
 
 .btn-detalhes {
@@ -191,6 +198,7 @@ nav {
 		<div>
 			<a href="cliente/login" class="btn nav-btn"> Entrar</a>
 			 <a href="/cadastrar/cliente" class="btn nav-btn"> Cadastrar-se</a> 
+			 <a href="cliente/favoritos" class="btn nav-btn"> Favoritos</a>
 		</div>
 	</nav>
 
@@ -208,7 +216,7 @@ nav {
 			</div>
 
 			<img
-				src="https://drive.google.com/file/d/1cYSsLzoIes4k-r9NvKkWfaFafM7rd9wk/view">
+				src="https://lh3.googleusercontent.com/f8sptiIkWe1e8MuJueMkp-WseaI7aKiT3DChZZVdoy-nlut5UC79NbXaYYH8qEJB9ijQry5pvRkjeHaC-aYjRXmII9RX2--wlRwGEytoMhDnZliZvU2Rdlrdd3AsH3SSmvGSMnSCTanCAKkCYLsa3-nE9fq_OXJvhAO8lpiX2AxIl1HNF78GFnR8R1-UAQ4A8mlCt1gRUaVfSLHKJ-64GuqkFgjIFt7XnYVTPewj8YeeWeRg8GkCKGerreTCjTLxG-GyvFwIaDf4HGb65wfRTwVs7dbhKClDqE-KGj30klQ-j4FFRgJra57heJ_UacXJrWnHse3xrMSswCH_Q4cS4rnEJWSDBuERVCqWuNeffUaqhGDPmMazUuWIBJAb6H2xM0BljLK-Og9PfUncUvHQHnTi_BdfaTAL5pwZ0QR68DvH31kFAv0zyhSw9hfehLrscGSy3XRNv3C43Qlkx6Enn2__O9pcbTBCsjdG8i7V6UL7A0OU7BJmc6z0CKawYS0b6LyhE_aC83xAmegissPqpGxN-L9q4EXTIPjw2cQRBmL7e2unnJeQ76GCDqfxoBOK_-RvTVv8Qd1-fkjNjVf53nOVtRtHRAUfBBNLno9t68Tb31BibwTkgnFrJ3kgixSwbNFjP4iih2em-05SuqCJZdsIb7Yo3hrNdnpZwMDmuWxGM2xi5GctEVI--rkgaQeFH_mCUXzB4l-6ZeL3R-QUHooE=w376-h568-no?authuser=0">
 
 		</section>
 
@@ -236,15 +244,11 @@ nav {
 						<h2 th:text=${p.descricao}>tipo</h2>
 						<h1 th:text=${p.nome}>Titulo</h1>
 
-
-
-
 					</div>
 
 
 					<button class="fav">
-						<img src="heart-before.svg" id="favimg" onmousemove="heartafter()"
-							onmouseout="heartbefore()" onclick="favoritar()">
+						<i class="fa fa-heart" id="favimg"></i>
 					</button>
 
 				</div>
@@ -252,30 +256,6 @@ nav {
 
 
 	</div>
-
-	<div>
-		Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a>
-		from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
-	</div>
-
-	<script>
-		function heartafter() {
-			var favimg = document.getElementById('favimg')
-
-			favimg.src = "heart-after.svg"
-			favimg.style.opacity = "0.7"
-
-		}
-
-		function heartbefore() {
-			var favimg = document.getElementById('favimg')
-
-			favimg.src = "heart-before.svg"
-
-		}
-	</script>
-
-
 
 </body>
 </html>

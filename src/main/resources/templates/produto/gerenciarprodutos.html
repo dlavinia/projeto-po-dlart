@@ -12,8 +12,6 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-
-
 <meta charset="UTF-8" />
 <style>
 @import
@@ -40,6 +38,15 @@ nav {
 	color: #fc444c;
 }
 
+
+
+table a {
+	color:#000;
+}
+table a:hover {
+	color:#fc444c;
+}
+
 .form-container{
 	margin: 5%;
 	padding: 5%;
@@ -63,7 +70,7 @@ nav {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	height: 40%;
+	height: 30%;
 	width: 100%;
 	background-color: #fc444c;
 	z-index: -2;
@@ -102,9 +109,7 @@ nav {
 		<a  href="/" class="navbar-brand">DLART</a>
 
 		<div>
-			<a href="#" class="btn nav-btn"> Entrar</a> <a href="#"
-				class="btn nav-btn"> Cadastrar-se</a> <a href="gerenciarprodutos"
-				class="btn nav-btn"> Gerenciar Produtos</a>
+			<a href="/" class="btn nav-btn"> Home</a>
 		</div>
 	</nav>
 
@@ -135,7 +140,7 @@ nav {
 					<td th:text=${p.nome}>nome</td>
 					<td th:text=${p.descricao} >descrição</td>
 					<td th:text=${p.preco} >preço</td>
-					<td><i class="fa fa-minus-circle" style="font-size: 25px"></i></td>
+					<td><a th:href="@{/produto/{id}/remover(id = ${p.id})}"> <i class="fa fa-minus-circle" style="font-size: 25px"></i> </a></td>
 				
 				</tr>
 

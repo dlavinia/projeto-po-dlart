@@ -1,12 +1,15 @@
 package ifrn.projetopi.dlart.models;
 
-import java.util.Set;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 @Entity
 public class Cliente {
@@ -17,9 +20,12 @@ public class Cliente {
 	private String nome;
 	private String email;
 	private String senha;
+
 	
 	@ManyToMany
-    private Set<Produto> produtosfavs;
+	@LazyCollection(LazyCollectionOption.FALSE)
+    private List<Produto> produtosfavs;
+	
 	
 	public Long getId() {
 		return id;
@@ -45,5 +51,12 @@ public class Cliente {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-
+	
+	public List<Produto> getProdutosfavs() {
+		return produtosfavs;
+	}
+	public void setProdutosfavs(List<Produto> produtosfavs) {
+		this.produtosfavs = produtosfavs;
+	}
+	
 }

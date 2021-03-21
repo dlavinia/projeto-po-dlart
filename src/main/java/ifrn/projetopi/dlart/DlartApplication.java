@@ -8,6 +8,7 @@ public class DlartApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DlartApplication.class, args);
+
 	}
 
 }

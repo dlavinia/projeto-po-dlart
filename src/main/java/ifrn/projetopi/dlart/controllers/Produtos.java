@@ -74,8 +74,21 @@ public class Produtos {
 	public String salvarProduto(Produto produto){
 		pr.save(produto);
 		System.out.print("Salvou o produto");
-		return "produto/gerenciarprodutos";
+		return "redirect:gerenciarprodutos";
 	}
 	
+	//Deletar produtos
+	@GetMapping("/produto/{id}/remover")
+	public String apagarProduto(@PathVariable Long id){
+	Optional<Produto> opt = pr.findById(id);
+
+	if(!opt.isEmpty()){
+		Produto produto = opt.get();
+		pr.delete(produto);
+		System.out.print("deletou o produto");
+		
+	}
 	
+	return "redirect:/gerenciarprodutos";
+	}
 }

@@ -19,6 +19,12 @@ public class Clientes {
 		return "cliente/novoCliente";
 	};
 	
+	@GetMapping("/cliente/favoritos")
+	public String favoritos() {
+		return "cliente/favs";
+	};
+	
+	
 	@GetMapping("/cliente/login")
 	public String formlogin() {
 		return "cliente/login";
